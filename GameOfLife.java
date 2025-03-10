@@ -28,7 +28,7 @@ public class GameOfLife implements Board {
         int[][] nextBoard = new int[board.length][board[0].length];
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
-                int neighbors = countNeighbors(i, k);
+                int neighbors = countNeighbors(i, j);
                 if (board[i][j] == 1) {
                     if (neighbors < 2 || neighbors > 3) {
                         nextBoard[i][j] = 0; 
@@ -81,7 +81,7 @@ public class GameOfLife implements Board {
         }
 
         for (int i = 0; i < board.length; i++) {
-            System.out.print("\n" + x % 10);
+            System.out.print("\n" + i % 10);
             for (int j = 0; j < board[i].length; j++) {
                 if (board[i][j] == 1) {
                     System.out.print("⬛");
